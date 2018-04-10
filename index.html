@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello world</title>
+</head>
+<script src = "/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    socket.on('broad cast',function(data) {
+        document.body.innerHTML = '';
+        document.write(data.description);
+    });
+    socket.emit('reply to',{ description: ' we have reached you!'})
+</script>
+<body>Hello world</body>
+</html>
